@@ -20,7 +20,8 @@ function Footer() {
         </div>
         <div className='bg-black text-white p-10 flex md:flex-row flex-col justify-between gap-2'>
             <div>
-                <h1 className='text-3xl'>Site <span className='font-bold'>Logo</span></h1>
+                {/* <h1 className='text-3xl'>Site <span className='font-bold'>Logo</span></h1> */}
+                <img className='rounded-full h-[100px] w-[100px]' src="/seeera.png" alt="" />
                 <p className=' md:w-1/2 w-auto'>High Level experience in web design and development knowledge , producing quality work </p>
 
             </div>
