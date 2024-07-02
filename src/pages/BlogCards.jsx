@@ -51,7 +51,7 @@ function BlogCards() {
         {postItems.map((blog) => (
           <Link key={blog.id} to={`/blogs`} className="p-5 shadow-lg rounded cursor-pointer">
             <div>
-              <img src={blog.image}  alt="" className="h-[300px] w-full object-fill " />
+              <img src={blog.image===null ? '/king.jpg':blog.image}  alt="" className="h-[300px] w-full object-fill " />
             </div>
             <h1 className="mt-4 mb-2 hover:text-blue-600 cursor-pointer font-bold">{blog.title}</h1>
             {/* <p>{blog.description}</p> */}

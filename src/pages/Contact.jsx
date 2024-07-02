@@ -11,8 +11,8 @@ function Contact() {
           <div className='m-10 p-20 '>
             <h1 className='text-black text-3xl font-bold'>Lets talk with us</h1>
             <p className='text-sm w-fit my-2'>Questions,connenctions or suggestions? Simply fill in the form and will be in touch shortly </p>
-            <p className='font-bold my-1'><FaLocationArrow className='inline'/> Sheryarsattti6@gmail.com</p>
-            <p className='font-bold my-1'><FaMailBulk className='inline'/> Sheryarsattti6@gmail.com</p>
+            <p className='font-bold my-1'><FaLocationArrow className='inline'/> Islamabad, Pakistan</p>
+            <p className='font-bold my-1'><FaPhone className='inline'/> +923075304856</p>
             <p className='font-bold my-1'><FaMailBulk className='inline'/> Sheryarsattti6@gmail.com</p>
           </div>
           <div className="login bg-orange-500  p-10 m-10 shadow-2xl">

@@ -23,7 +23,8 @@ function Navbar() {
       <nav className="navbar px-4 py-4 max-w-7xl mx-auto flex justify-between items-center ">
         <Link to="/" className="text-xl font-bold text-white">
           {" "}
-          SERA <span className="text-orange-500">Innovations</span>
+          <img className="h-[80px] w-[80px] rounded-full" src="/seeera.png" alt="" />
+          {/* SERA <span className="text-orange-500">Innovations</span> */}
         </Link>
         <ul className="md:flex gap-12 text-lg hidden">
           <NavLink

@@ -26,7 +26,7 @@ function Footer() {
             </div>
             <div className='flex-col'>
                 <div className='flex font-bold'>
-                    <h1>Use Cases</h1>
+                    <h1 className='text-sm'>Use cases</h1>
                     <h1 className='mx-32'>Company</h1>
                 </div>
                 <div className='flex'>
@@ -46,7 +46,7 @@ function Footer() {
                 </div>
             </div>
             <div>
-                <h1 className='font-bold text-xl'>Follow Us</h1>
+                <h1 className='font-bold text-lg'>Follow us</h1>
                 <div className='flex gap-1 md:gap-2'>
                     <Link className="hover:text-orange-600"><FaFacebook/></Link>
                     <Link className="hover:text-orange-600"><FaInstagram/></Link>
