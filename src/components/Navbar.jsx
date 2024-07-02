@@ -7,6 +7,7 @@ import {
   FaFacebook,
   FaInstagram,
   FaMaxcdn,
+  FaSearch,
   FaTwitter,
   FaXbox,
 } from "react-icons/fa";
@@ -69,6 +70,20 @@ function Navbar() {
           <a href="/" className="hover:text-orange-500">
             <FaTwitter />
           </a>
+          <div className="relative ">
+            <input
+              type="search"
+              className="pl-10 pr-10 py-2 border text-black w-5 border-gray-300 rounded-lg"
+              placeholder="Search"
+            />
+            <label
+              className="absolute top-0 right-0 flex items-center justify-center w-10 h-full text-gray-400"
+              htmlFor="search"
+            >
+              <FaSearch />
+            </label>
+    </div>
+
           <button className="bg-orange-500 px-6 py-2 font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in">
             <Link to={"/login"}>Log in</Link>
           </button>
