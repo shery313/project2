@@ -38,7 +38,7 @@ const Search = () => {
           {open && (
             <>
               <div
-                className={`w-[50%] sm:w-[50%] mr-8 h-[40px] sm:h-[50px] rounded-3xl ${
+                className={`w-[64%] sm:w-[50%] mr-2 sm:mr-8 h-[40px] sm:h-[50px] rounded-3xl ${
                   inputFocus
                     ? "bg-transparent border-[1px] border-gray-200"
                     : "border-gray-200 bg-gray-200 border "
@@ -67,7 +67,7 @@ const Search = () => {
               </div>
             </>
           )}
-          <div className=" w-[40%] sm:w-[20%] flex items-center justify-between">
+          <div className=" w-[33%] sm:w-[20%] flex items-center justify-between">
             <div className="flex justify-center items-center">
               <div
                 className={` w-[40px] flex justify-center items-center h-[40px] rounded-full text-2xl ${
@@ -85,7 +85,7 @@ const Search = () => {
                 )}
               </div>
             </div>
-            <div className=" w-[60%] sm:w-[40%] flex justify-between items-center">
+            <div className=" w-[60%] sm:w-[40%] flex justify-end sm:justify-between items-center">
               <p>Filters</p>
               <div className=" w-[40px] h-[40px] rounded-full bg-gray-300 flex justify-center items-center">
                 0

@@ -11,7 +11,9 @@ import {
   FaTwitter,
   FaXbox,
 } from "react-icons/fa";
-import { MdOutlineClose } from "react-icons/md";
+
+import { IoIosMenu } from "react-icons/io";
+import { IoCloseOutline } from "react-icons/io5";
 import Banner from "./Banner";
 
 function Navbar() {
@@ -94,7 +96,11 @@ function Navbar() {
         </div>
         <div className="md:hidden">
           <button onClick={toggleMenu} className="w-10 h-10">
-            {isMenuOpen ? <MdOutlineClose size={40} /> : <FaBars size={30} />}
+            {isMenuOpen ? (
+              <IoCloseOutline size={30} />
+            ) : (
+              <IoIosMenu size={30} />
+            )}
           </button>
         </div>
       </nav>
