@@ -101,7 +101,7 @@ function Navbar() {
       <ul
         className={`md:flex-col  md:hidden gap-12 text-lg block space-y-4 px-4 py-6 mt-14 text-black bg-white ${
           isMenuOpen
-            ? "fixed top-8 left-0 w-full transition-all ease-out duration-150"
+            ? "fixed top-5 left-0 w-full transition-all ease-out duration-150"
             : "hidden"
         } `}
       >
