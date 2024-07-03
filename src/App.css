@@ -1,0 +1,27 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-blue-bg-1: #012b3f /*  */ /* #003459 */;
+  --color-blue-bg-2: #023047;
+  --color-aqua-blue: #8ecae6;
+  --color-medium-blue: #219ebc;
+  --color-honey-yellow: #ffb703;
+  --color-orange: rgb(249 115 22);
+}
+
+.active {
+  @apply text-[var(--color-orange)] underline underline-offset-4;
+}
+.pressed {
+  @apply bg-[var(--color-orange)] text-white underline underline-offset-4;
+}
+
+.rotate {
+  transform: rotate(45deg);
+}

@@ -20,14 +20,14 @@ function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
   return (
-    <header className="bg-black text-white fixed top-0 left-0 right-0">
+    <header className="bg-[var(--color-blue-bg-1)] hover:bg-[var(--color-blue-bg-2)] transition-colors duration-300 ease-in-out text-white fixed top-0 left-0 right-0 z-10">
       <nav className="navbar px-4 py-4 max-w-7xl mx-auto flex justify-between items-center ">
-        <Link to="/" className="text-xl font-bold text-white">
+        <Link to="/" className=" font-bold text-white text-2xl">
           {" "}
           {/* <img className="h-[80px] w-[80px] rounded-full" src="/seeera.png" alt="" /> */}
-          SERA <span className="text-orange-500">Innovations</span>
+          SERA <span className="text-[var(--color-orange)]">Innovations</span>
         </Link>
-        <ul className="md:flex gap-12 text-lg hidden">
+        <ul className="md:flex gap-12 hidden uppercase font-bold text-[14px]">
           <NavLink
             to="/"
             className={({ isActive }) => (isActive ? "active" : "")}
@@ -61,7 +61,7 @@ function Navbar() {
           </NavLink>
         </ul>
         <div className="text-white lg:flex gap-4 items-center hidden">
-          <a href="/" className="hover:text-orange-500">
+          {/* <a href="/" className="hover:text-orange-500">
             <FaFacebook />
           </a>
           <a href="/" className="hover:text-orange-500">
@@ -82,12 +82,12 @@ function Navbar() {
             >
               <FaSearch />
             </label>
-    </div>
+          </div> */}
 
-          <button className="bg-orange-500 px-6 py-2 font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in">
+          <button className="bg-[var(--color-orange)] px-6 py-2 font-medium text-white rounded hover:bg-white hover:text-[var(--color-orange)] transition-all duration-200 ease-in">
             <Link to={"/login"}>Log in</Link>
           </button>
-          <button className="bg-orange-500 px-6 py-2 font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in">
+          <button className="bg-[var(--color-orange)] px-6 py-2 font-medium rounded hover:bg-white hover:text-[var(--color-orange)] transition-all duration-200 ease-in">
             <Link to={"/signup"}>Sign up</Link>
           </button>
         </div>
