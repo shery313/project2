@@ -34,11 +34,11 @@ const Search = () => {
   return (
     <div className="w-full mb-44">
       <div className="w-full flex justify-center items-center">
-        <div className="w-[90%] flex items-center justify-end pt-6 h-[55px] ">
+        <div className="w-[90%] flex items-center justify-end pt-6 sm:h-[55px] ">
           {open && (
             <>
               <div
-                className={`w-[400px] mr-8 h-[50px] rounded-3xl ${
+                className={`w-[50%] sm:w-[50%] mr-8 h-[40px] sm:h-[50px] rounded-3xl ${
                   inputFocus
                     ? "bg-transparent border-[1px] border-gray-200"
                     : "border-gray-200 bg-gray-200 border "
@@ -51,14 +51,14 @@ const Search = () => {
                 >
                   <input
                     type="text"
-                    className="flex-1 text-[1rem] focus:bg-transparent bg-gray-200  outline-none h-full px-2  rounded-3xl"
+                    className=" w-[80%] sm:flex-1 text-[1rem] focus:bg-transparent bg-gray-200  outline-none h-full px-2  rounded-3xl"
                     aria-label="Search"
                     placeholder="Search for ..."
                     ref={ref2}
                   />
 
                   <button
-                    className="text-gray-400 bg-gray-200 h-[47px] w-[50px] flex justify-center items-center rounded-full text-[1.5rem] hover:text-[var(--color-orange)]"
+                    className="text-gray-400 w-[20%] bg-gray-200 h-[100%] sm:h-[47px] sm:w-[50px] flex justify-center items-center rounded-full text-[1.5rem] hover:text-[var(--color-orange)]"
                     aria-label="Submit Search"
                   >
                     <IoSearchOutline size={30} />
@@ -67,7 +67,7 @@ const Search = () => {
               </div>
             </>
           )}
-          <div className="w-[20%] flex items-center justify-between">
+          <div className=" w-[40%] sm:w-[20%] flex items-center justify-between">
             <div className="flex justify-center items-center">
               <div
                 className={` w-[40px] flex justify-center items-center h-[40px] rounded-full text-2xl ${
@@ -85,7 +85,7 @@ const Search = () => {
                 )}
               </div>
             </div>
-            <div className=" w-[40%] flex justify-between items-center">
+            <div className=" w-[60%] sm:w-[40%] flex justify-between items-center">
               <p>Filters</p>
               <div className=" w-[40px] h-[40px] rounded-full bg-gray-300 flex justify-center items-center">
                 0

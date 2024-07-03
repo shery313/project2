@@ -11,6 +11,7 @@ import {
   FaTwitter,
   FaXbox,
 } from "react-icons/fa";
+import { MdOutlineClose } from "react-icons/md";
 import Banner from "./Banner";
 
 function Navbar() {
@@ -92,15 +93,15 @@ function Navbar() {
           </button>
         </div>
         <div className="md:hidden">
-          <button onClick={toggleMenu} className="w-5 h-5">
-            {isMenuOpen ? <FaXbox /> : <FaBars />}
+          <button onClick={toggleMenu} className="w-10 h-10">
+            {isMenuOpen ? <MdOutlineClose size={40} /> : <FaBars size={30} />}
           </button>
         </div>
       </nav>
       <ul
         className={`md:flex-col  md:hidden gap-12 text-lg block space-y-4 px-4 py-6 mt-14 text-black bg-white ${
           isMenuOpen
-            ? "fixed top-0 left-0 w-full transition-all ease-out duration-150"
+            ? "fixed top-8 left-0 w-full transition-all ease-out duration-150"
             : "hidden"
         } `}
       >

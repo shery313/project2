@@ -18,8 +18,8 @@ function Banner() {
         </p>
       </div>
       <div className="w-full flex justify-center items-center">
-        <div className="w-[40%]">
-          <div className="flex justify-between w-full items-center h-[50px] text-white text-[14px] ">
+        <div className="w-[90%]  sm:w-[40%]">
+          <div className="flex flex-col gap-6 sm:gap-0 sm:flex-row justify-between w-full items-center h-[50px] text-white text-[14px] ">
             <Link
               to="/"
               className="font-medium uppercase border border-[var(--color-orange)] rounded-3xl  hover:bg-[var(--color-orange)] px-4 py-2 hover:text-white flex justify-center items-center hover:border hover:border-[var(--color-orange)]"
