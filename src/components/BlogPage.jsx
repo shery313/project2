@@ -11,7 +11,7 @@ function BlogPage() {
         <CategoryPage />
       </div>
       {/* blogs  */}
-      {/*         <div><BlogCards/></div> */}
+              <div><BlogCards/></div>
     </div>
   );
 }

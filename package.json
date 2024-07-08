@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "dom": "^0.0.3",
     "icons": "^1.0.0",
     "localforage": "^1.10.0",

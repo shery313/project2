@@ -2,13 +2,24 @@ import React, { useRef, useState, useEffect } from "react";
 import { FaCross, FaSearch } from "react-icons/fa";
 import { MdOutlineClose } from "react-icons/md";
 import { IoSearchOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 const Search = () => {
+  const[search,setSearch]=useState('')
+  const navigate=useNavigate()
   const ref2 = useRef();
   const ref1 = useRef();
   const [inputFocus, setInputFocus] = useState(false);
   const [open, setOpen] = useState(false);
+  const handleChange=(event)=>{
+    setSearch(event.target.value)
+    
+  }
+  const handleSubmit=(event)=>{
+    navigate(`/search/?query=${search}`)
 
+
+  }
   useEffect(() => {
     function handleClickOutside(event) {
       if (ref2.current && !ref2.current.contains(event.target)) {
@@ -32,7 +43,7 @@ const Search = () => {
   console.log(ref1);
 
   return (
-    <div className="w-full mb-44">
+    <div className="w-full bg-gray-400">
       <div className="w-full flex justify-center items-center">
         <div className="w-[90%] flex items-center justify-end pt-6 sm:h-[55px] ">
           {open && (
@@ -55,11 +66,12 @@ const Search = () => {
                     aria-label="Search"
                     placeholder="Search for ..."
                     ref={ref2}
+                    onChange={handleChange}
                   />
 
                   <button
                     className="text-gray-400 w-[20%] bg-gray-200 h-[100%] sm:h-[47px] sm:w-[50px] flex justify-center items-center rounded-full text-[1.5rem] hover:text-[var(--color-orange)]"
-                    aria-label="Submit Search"
+                    aria-label="Submit Search" onClick={handleSubmit}
                   >
                     <IoSearchOutline size={30} />
                   </button>

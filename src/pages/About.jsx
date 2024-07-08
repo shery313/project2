@@ -12,7 +12,7 @@ function About() {
             <img className='rounded-full md:w-[400px] md:h-[400px] w-[200px] h-[200px] ' src="/king.jpg" alt="" />
             <div clas>
               <h1 className='md:text-5xl text-2xl my-1  font-bold ml-10 md:w-0 inline  '>About Our Company</h1>
-              <p className='text-xl text-center'>Welcome to SERA innovations, your one-stop-shop for all your digital needs!</p>
+              <p className='text-xl text-center my-1'>Welcome to SERA innovations, your one-stop-shop for all your digital needs!</p>
             </div>
           </div>
           <h1 className='text-3xl text-center font-bold my-5 mx-5'>Our Team</h1>

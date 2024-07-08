@@ -10,6 +10,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Login from "./auth/Login";
 import SignUp from "./auth/SignUp";
+import SearchResults from "./components/SearchResults";
+import Category from "./components/Category";
 function App() {
   return (
     <div>
@@ -23,6 +25,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/search" element={<SearchResults />} />
+          <Route path="/category/:slug" element={<Category />} />
         </Routes>
         <Footer />
       </BrowserRouter>
