@@ -2,11 +2,12 @@ import React from "react";
 import BlogCards from "../pages/BlogCards";
 import { useState, useEffect } from "react";
 import CategoryPage from "../pages/CategoryPage";
+import Search from "./Search";
 
 function BlogPage() {
   return (
     <div>
-      {/* page category */}
+      <Search/>
       <div>
         <CategoryPage />
       </div>

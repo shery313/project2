@@ -1,9 +1,11 @@
 import React from 'react'
 import { FaAddressBook, FaGlassMartiniAlt, FaLocationArrow, FaMailBulk, FaMailchimp, FaPhone, FaSearchLocation, FaSeedling, FaShare, FaVoicemail } from 'react-icons/fa'
+import Navbar from '../components/Navbar'
 
 function Contact() {
   return (
     <div>
+      <Navbar/>
        <div className="py-36 bg-black text-white">
           <h1 className="text-5xl lg:text-7xl leading-snug font-bold mb-4 py-5 px-4 text-center">Contact Us</h1>
         </div>

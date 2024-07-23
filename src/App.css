@@ -16,7 +16,7 @@
 }
 
 .active {
-  @apply text-[var(--color-orange)] underline underline-offset-4;
+  @apply text-[var(--color-orange)] underline  underline-offset-4 ;
 }
 .pressed {
   @apply bg-[var(--color-orange)] text-white underline underline-offset-4;

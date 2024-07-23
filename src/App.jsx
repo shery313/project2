@@ -1,4 +1,4 @@
-import { useState } from "react";
+// App.jsx
 import "./App.css";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
@@ -12,25 +12,49 @@ import Login from "./auth/Login";
 import SignUp from "./auth/SignUp";
 import SearchResults from "./components/SearchResults";
 import Category from "./components/Category";
+import PrivateRoutes from "./wrappers/PrivateRoutes";
+import Logout from "./auth/Logout";
+import MainWrapper from "./wrappers/MainWrapper";
+import BlogDetail from "./components/BlogDetail";
+import NotFound from "./components/NotFound";
+import Profile from "./Dashboard/Profile";
+import AddBlog from "./Dashboard/AddBlog";
+import Notifications from "./Dashboard/Notifications";
+import ProfileBlogs from "./Dashboard/ProfileBlogs";
+import EditBlog from "./Dashboard/EditBlog";
+
 function App() {
   return (
-    <div>
-      <BrowserRouter>
+    <BrowserRouter>
+      <MainWrapper>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/blogs" element={<Blogs />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/service" element={<Service />} />
-          <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/search" element={<SearchResults />} />
-          <Route path="/category/:slug" element={<Category />} />
+          <Route path="*" element={<NotFound />} />
+
+          {/* Private Routes */}
+          <Route element={<PrivateRoutes />}>
+            <Route path="/logout" element={<Logout />} />
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/service" element={<Service />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/search" element={<SearchResults />} />
+            <Route path="/category/:slug" element={<Category />} />
+            <Route path="/blog/:slug" element={<BlogDetail />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/add-blog" element={<AddBlog />} />
+            <Route path="/notifications" element={<Notifications />} />
+            <Route path="/profile-blogs" element={<ProfileBlogs />} />
+            <Route path="/edit-blog/:id" element={<EditBlog />} />
+
+          </Route>
         </Routes>
         <Footer />
-      </BrowserRouter>
-    </div>
+      </MainWrapper>
+    </BrowserRouter>
   );
 }
 

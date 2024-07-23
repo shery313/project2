@@ -1,8 +1,10 @@
 import React from 'react'
+import Navbar from '../components/Navbar'
 
 function About() {
   return (
     <div>
+      <Navbar/>
       <div className="py-36 bg-black text-white">
         <h1 className="text-5xl lg:text-7xl leading-snug font-bold mb-4 py-5 px-4 text-center">About Us</h1>
       </div>
@@ -10,9 +12,9 @@ function About() {
         <div className='bg-orange-500 p-10'>
           <div className='flex md:flex-row flex-col justify-between items-center '>
             <img className='rounded-full md:w-[400px] md:h-[400px] w-[200px] h-[200px] ' src="/king.jpg" alt="" />
-            <div clas>
-              <h1 className='md:text-5xl text-2xl my-1  font-bold ml-10 md:w-0 inline  '>About Our Company</h1>
-              <p className='text-xl text-center my-1'>Welcome to SERA innovations, your one-stop-shop for all your digital needs!</p>
+            <div className=' text-center'>
+              <h1 className='md:text-5xl text-lg my-1  font-bold   '>About Our Company</h1>
+              <p className='md:text-xl text-lg my-1'>Welcome to SERA innovations, your one-stop-shop for all your digital needs!</p>
             </div>
           </div>
           <h1 className='text-3xl text-center font-bold my-5 mx-5'>Our Team</h1>

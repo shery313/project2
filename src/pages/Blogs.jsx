@@ -1,10 +1,12 @@
 import React from 'react'
 import BlogPage from '../components/BlogPage'
+import Navbar from '../components/Navbar'
 
 
 function Blogs() {
   return (
     <div>
+      <Navbar/>
         <div className="py-36 bg-black text-white">
           <h1 className="text-5xl lg:text-7xl leading-snug font-bold mb-4 py-5 px-4 text-center">Blogs</h1>
         </div>
