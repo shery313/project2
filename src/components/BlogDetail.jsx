@@ -119,7 +119,7 @@ const BlogDetail = () => {
             <img className='rounded-lg md:w-[1500px] md:h-[500px]' src={post?.image} alt={post?.title} />
             <div className='flex gap-2'>
               <div className='h-10 w-10 ml-2 mt-2  '>
-                <img className='h-9 w-9 rounded-full border border-orange-500' src={post?.profile?.image} alt={post?.profile?.full_name} />
+                <img className='h-9 w-9 rounded-full border border-orange-500' src={post?.profile?.image||"/default.jpg"} alt={post?.profile?.full_name} />
               </div>
               <div className='mt-2'>
                 <h1 className='text-sm font-bold cursor-pointer text-blue-400'><FaUser className='inline' /> {post?.profile?.full_name}</h1>

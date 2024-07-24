@@ -28,7 +28,7 @@ function Login() {
       <div className='mt-10 pt-5'>
         <div className='flex md:flex-row flex-col-reverse gap-2'>
           <div className="login bg-orange-500 shadow-lg p-20">
-            <h1 className='text-5xl mx-5 font-bold'>Login now</h1>
+            <h1 className=' md:text-5xl text-3xl mx-5 font-bold'>Login now</h1>
             <div className='flex flex-col m-5 gap-2'>
               <label htmlFor="email">Email</label>
               <input placeholder='Enter you email id' onChange={(e) => (setEmail(e.target.value))} className='my-1  blockS h-9 border border-gray-200 rounded-lg p-3 hover:outline outline-blue-500 outline-1' type="email" name="" id="" />
@@ -40,10 +40,10 @@ function Login() {
                 <span class="mx-4 text-gray-500">OR</span>
                 <div class="flex-grow border-t border-gray-300"></div>
               </div>
-              <button  type='submit' className='rounded-lg hover:bg-black hover:text-orange-500  bg-red-500 h-fit my-1 p-3 text-white font-bold'>Sign in with Google</button>
+              <button  type='submit' className='rounded-lg hover:bg-black hover:text-orange-500  bg-red-500 h-fit my-1 p-3 text-white font-bold '>Sign in with Google</button>
             </div>
           </div>
-          <div className="img ml-52 md:block hidden">
+          <div className="img ml-40 md:block hidden">
             <img className='rounded-s-3xl h-[700px] w-[700px]' src="/login-now.png" alt="" />
           </div>
         </div>

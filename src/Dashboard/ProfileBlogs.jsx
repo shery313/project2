@@ -63,7 +63,7 @@ function ProfileBlogs() {
                     <div className="mb-4 flex flex-col md:flex-row justify-between items-center">
                         <input
                             onChange={handleSearch}
-                            className="form-input rounded-lg bg-gray-100 border-0 w-full md:w-2/3 mb-2 md:mb-0 p-1"
+                            className="form-input rounded-lg bg-gray-100 border-0 w-full md:w-2/3 mb-2 md:mb-0 p-2"
                             type="search"
                             placeholder="Search Articles"
                             aria-label="Search"
