@@ -43,8 +43,8 @@ function Login() {
               <button  type='submit' className='rounded-lg hover:bg-black hover:text-orange-500  bg-red-500 h-fit my-1 p-3 text-white font-bold'>Sign in with Google</button>
             </div>
           </div>
-          <div className="img p-20 ">
-            <img className='rounded-s-3xl ' src="/login.jpg" alt="" />
+          <div className="img ml-52 md:block hidden">
+            <img className='rounded-s-3xl h-[700px] w-[700px]' src="/login-now.png" alt="" />
           </div>
         </div>
       </div></>

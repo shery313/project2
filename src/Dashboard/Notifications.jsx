@@ -83,7 +83,7 @@ function Notifications() {
                                                 </div>
                                             </li>
                                         ))}
-                                        {noti?.length < 1 && <p>No notifications yet</p>}
+                                        {noti?.length < 1 && <p className="mt-2">No notifications yet</p>}
                                     </ul>
                                 </div>
                             </div>

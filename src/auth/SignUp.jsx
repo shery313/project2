@@ -37,8 +37,8 @@ function SignUp() {
               <button onClick={handleSubmit} className='rounded-lg hover:bg-black hover:text-orange-500 bg-orange-200 h-fit my-1 p-3 text-black font-bold'>Sign up</button>
             </div>
           </div>
-          <div className="img p-32 mx-20 ">
-            <img className=' rounded-se-3xl ' src="/Signup.jpg" alt="" />
+          <div  className="img p-32 pt-10 pb-10 mx-20 hidden md:block ">
+            <img className=' h-[500px] w-[500px]  ' src="/signup-now.png" alt="" />
           </div>
         </div>
       </div></>
