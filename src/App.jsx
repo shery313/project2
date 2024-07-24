@@ -33,17 +33,17 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/service" element={<Service />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/search" element={<SearchResults />} />
+          <Route path="/category/:slug" element={<Category />} />
+          <Route path="/blog/:slug" element={<BlogDetail />} />
 
           {/* Private Routes */}
           <Route element={<PrivateRoutes />}>
             <Route path="/logout" element={<Logout />} />
-            <Route path="/blogs" element={<Blogs />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/service" element={<Service />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/search" element={<SearchResults />} />
-            <Route path="/category/:slug" element={<Category />} />
-            <Route path="/blog/:slug" element={<BlogDetail />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/add-blog" element={<AddBlog />} />
             <Route path="/notifications" element={<Notifications />} />
