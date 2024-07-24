@@ -1,63 +1,41 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import {
-  FaAddressBook,
-  FaArrowAltCircleDown,
-  FaArrowCircleDown,
-  FaArrowDown,
-  FaBars,
-  FaBell,
-  FaBlog,
-  FaBlogger,
-  FaBookmark,
-  FaDribbble,
-  FaFacebook,
-  FaInstagram,
-  FaMaxcdn,
-  FaSearch,
-  FaTwitter,
-  FaUser,
-  FaXbox,
-} from "react-icons/fa";
-
+import { FaUser, FaBlog, FaBell, FaBlogger } from "react-icons/fa";
 import { IoIosMenu } from "react-icons/io";
 import { IoCloseOutline } from "react-icons/io5";
-import Banner from "./Banner";
 import { useAuthStore } from "../store/auth";
-import { MdDashboard } from "react-icons/md";
 import { userdata } from "../plugins/userdata";
 import apiInstance from "../utils/axios";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isLoggedIn=useAuthStore((state)=>(state.isLoggedIn))();
-  const [isProfileOpen,setIsProfileOpen]=useState(false);
-  const [ profileData,setProfileData]=useState('');
+  const isLoggedIn = useAuthStore((state) => state.isLoggedIn)();
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [profileData, setProfileData] = useState('');
   const userId = userdata()?.user_id;
-  console.log(isLoggedIn) 
+
   const toggleMenu = () => {
-    console.log("clicked");
     setIsMenuOpen(!isMenuOpen);
   };
+
   const toggleProfile = () => {
-    console.log("clicked");
     setIsProfileOpen(!isProfileOpen);
   };
+
   const fetchProfile = () => {
     apiInstance.get(`user/profile/${userId}/`).then((res) => {
-        setProfileData(res.data);
+      setProfileData(res.data);
     });
-};
+  };
 
   useEffect(() => {
-      fetchProfile();
+    fetchProfile();
   }, []);
-  
-  return (
-    <header className="bg-[var(--color-blue-bg-1)]  hover:bg-[var(--color-blue-bg-2)] transition-colors duration-300 ease-in-out text-white fixed top-0 left-0 right-0 z-10">
 
-      <nav className="navbar px-4 py-4 max-w-7xl mx-auto flex justify-between items-center ">
-      <div className="md:hidden">
+  return (
+    <header className="bg-[var(--color-blue-bg-1)] hover:bg-[var(--color-blue-bg-2)] transition-colors duration-300 ease-in-out text-white fixed top-0 left-0 right-0 z-10">
+      <nav className="navbar px-4 py-4 max-w-7xl mx-auto flex justify-between items-center">
+        <div className="md:hidden">
           <button onClick={toggleMenu} className="w-10 h-10">
             {isMenuOpen ? (
               <IoCloseOutline size={30} />
@@ -66,9 +44,7 @@ function Navbar() {
             )}
           </button>
         </div>
-        <Link to="/" className=" font-bold text-white md:text-2xl">
-          {" "}
-          {/* <img className="h-[80px] w-[80px] rounded-full" src="/seeera.png" alt="" /> */}
+        <Link to="/" className="font-bold text-white md:text-2xl">
           SERA <span className="text-[var(--color-orange)]">Innovations</span>
         </Link>
         <ul className="md:flex md:gap-6 gap-5 hidden uppercase font-bold md:text-[12px]">
@@ -94,7 +70,6 @@ function Navbar() {
             to="/about"
             className={({ isActive }) => (isActive ? "active" : "")}
           >
-            {" "}
             <li>About</li>
           </NavLink>
           <NavLink
@@ -104,53 +79,38 @@ function Navbar() {
             <li>Blogs</li>
           </NavLink>
         </ul>
-        <div className="text-white flex lg:flex md:gap-4 gap-2 items-center text-[12px] ">
-          {/* <a href="/" className="hover:text-orange-500">
-            <FaFacebook />
-          </a>
-          <a href="/" className="hover:text-orange-500">
-            <FaDribbble />
-          </a>
-          <a href="/" className="hover:text-orange-500">
-            <FaTwitter />
-          </a>
-          <div className="relative ">
-            <input
-              type="search"
-              className="pl-10 pr-10 py-2 border text-black w-5 border-gray-300 rounded-lg"
-              placeholder="Search"
-            />
-            <label
-              className="absolute top-0 right-0 flex items-center justify-center w-10 h-full text-gray-400"
-              htmlFor="search"
-            >
-              <FaSearch />
-            </label>
-          </div> */}
-          
-          {
-            isLoggedIn?<div className="flex gap-3 ">
-              <button onClick={toggleProfile} ><img className="w-10 h-10 rounded-full  border-orange-600 border-2" src={`${profileData.image || 'default.jpg' } `} alt="user-profile" /></button>
-              <button className="bg-[var(--color-orange)] md:px-4 md:py-2 py-1 px-2 m font-medium text-white rounded hover:bg-white hover:text-[var(--color-orange)] transition-all duration-200 ease-in">
-            <Link to={"/logout"}>Log out</Link>
-          </button></div>:
-            <div className="flex gap-2"><button className="bg-[var(--color-orange)] md:px-4 md:py-2 py-1 px-2 font-medium text-white rounded hover:bg-white hover:text-[var(--color-orange)] transition-all duration-200 ease-in">
-            <Link to={"/login"}>Log in</Link>
-          </button>
-          <button className="bg-[var(--color-orange)] md:px-4 md:py-2 py-2 px-2 font-medium rounded hover:bg-white hover:text-[var(--color-orange)] transition-all duration-200 ease-in">
-            <Link to={"/signup"}>Sign up</Link>
-          </button></div>
-          }
-          
+        <div className="text-white flex lg:flex md:gap-4 gap-2 items-center text-[12px]">
+          {isLoggedIn ? (
+            <div className="flex gap-3">
+              <button onClick={toggleProfile}>
+                <img
+                  className="w-10 h-10 rounded-full border-orange-600 border-2"
+                  src={`${profileData.image || 'default.jpg'}`}
+                  alt="User Profile"
+                />
+              </button>
+              <button className="bg-[var(--color-orange)] md:px-4 md:py-2 py-1 px-2 font-medium text-white rounded hover:bg-white hover:text-[var(--color-orange)] transition-all duration-200 ease-in">
+                <Link to="/logout">Log out</Link>
+              </button>
+            </div>
+          ) : (
+            <div className="flex gap-2">
+              <button className="bg-[var(--color-orange)] md:px-4 md:py-2 py-1 px-2 font-medium text-white rounded hover:bg-white hover:text-[var(--color-orange)] transition-all duration-200 ease-in">
+                <Link to="/login">Log in</Link>
+              </button>
+              <button className="bg-[var(--color-orange)] md:px-4 md:py-2 py-2 px-2 font-medium rounded hover:bg-white hover:text-[var(--color-orange)] transition-all duration-200 ease-in">
+                <Link to="/signup">Sign up</Link>
+              </button>
+            </div>
+          )}
         </div>
-        
       </nav>
       <ul
-        className={`md:flex-col  md:hidden gap-12 text-lg block space-y-4 px-4 py-6 mt-14 right-0 text-black bg-white ${
+        className={`md:flex-col md:hidden gap-12 text-lg block space-y-4 px-4 py-6 mt-14 right-0 text-black bg-white ${
           isMenuOpen
-            ? "fixed top-5 left-0  w-fit rounded-lg transition-all ease-out duration-150"
+            ? "fixed top-5 left-0 w-fit rounded-lg transition-all ease-out duration-150"
             : "hidden"
-        } `}
+        }`}
       >
         <NavLink
           to="/"
@@ -174,7 +134,6 @@ function Navbar() {
           to="/about"
           className={({ isActive }) => (isActive ? "active" : "")}
         >
-          {" "}
           <li onClick={toggleMenu}>About</li>
         </NavLink>
         <NavLink
@@ -185,40 +144,47 @@ function Navbar() {
         </NavLink>
       </ul>
       <ul
-        className={`md:flex-col   gap-12 md:text-lg text-sm block space-y-4 px-4 py-6 mt-14 text-black rounded-lg bg-white ${
+        className={`md:flex-col gap-12 md:text-lg text-sm block space-y-4 px-4 py-6 mt-14 text-black rounded-lg bg-white ${
           isProfileOpen
-            ? "fixed top-5 right-0 transition-all ease-out duration-150 w-fit ml-52 "
+            ? "fixed top-5 right-0 transition-all ease-out duration-150 w-fit ml-52"
             : "hidden"
-        } `}
+        }`}
       >
         <NavLink
           to="/profile"
           className={({ isActive }) => (isActive ? "active" : "")}
         >
-          <li onClick={toggleProfile}><FaUser className="inline"/> Profile</li>
+          <li onClick={toggleProfile}>
+            <FaUser className="inline" /> Profile
+          </li>
         </NavLink>
         <NavLink
           to="/add-blog"
           className={({ isActive }) => (isActive ? "active" : "")}
         >
-          <li onClick={toggleProfile}><FaBlog className="inline"/> Add Blog</li>
+          <li onClick={toggleProfile}>
+            <FaBlog className="inline" /> Add Blog
+          </li>
         </NavLink>
         <NavLink
           to="/notifications"
           className={({ isActive }) => (isActive ? "active" : "")}
         >
-          <li onClick={toggleProfile}><FaBell className="inline"/>Notifications</li>
+          <li onClick={toggleProfile}>
+            <FaBell className="inline" /> Notifications
+          </li>
         </NavLink>
         <NavLink
           to="/profile-blogs"
           className={({ isActive }) => (isActive ? "active" : "")}
         >
-          {" "}
-          <li onClick={toggleProfile}><FaBlogger className="inline"/> My Blogs</li>
+          <li onClick={toggleProfile}>
+            <FaBlogger className="inline" /> My Blogs
+          </li>
         </NavLink>
-       
       </ul>
     </header>
   );
 }
+
 export default Navbar;
