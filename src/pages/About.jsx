@@ -46,31 +46,31 @@ export default function About() {
           <div  >
             <Slider {...settings}>
               <div className='bg-blue-400 rounded-lg   text-white flex flex-col p-10  content-center text-center gap-2 justify-center items-center'>
-                <img className='h-[100px] w-[100px]  rounded-full mx-12 md:mx-[460px]' src="/s.jpg" alt="Sheryar Azhar" />
+                <img className='md:h-[200px] md:w-[200px] h-[100px] w-[100px] rounded-full mx-8 md:mx-[410px]' src="/s.jpg" alt="Sheryar Azhar" />
                 <h1 className='font-bold text-xl text-center my-1'>Sheryar Azhar</h1>
                 <p className='text-sm text-center my-1'>Web Developer</p>  
                 <button className='bg-orange-500 text-center px-6 py-2 my-2 font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in'>Read More</button>
               </div>
               <div className='bg-blue-400 text-white rounded-lg  flex flex-col p-10 w-fit gap-2 justify-center items-center text-center '>
-                <img className='h-[100px] w-[100px]  rounded-full text-center mx-12 md:mx-[460px]' src="/alfred.jpg" alt="Alfred" />
+                <img className='md:h-[200px] md:w-[200px] w-[100px] h-[100px] rounded-full text-center mx-8 md:mx-[410px]' src="/alfred.jpg" alt="Alfred" />
                 <h1 className='font-bold text-xl text-center my-1'>Alfred</h1>
                 <p className='text-sm text-center my-1'>Web Developer</p>  
                 <button className='bg-orange-500 text-center px-6 py-2 my-2 font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in'>Read More</button>
               </div>
               <div className='bg-blue-400 text-white rounded-lg  flex flex-col p-10 w-fit gap-2 justify-center items-center text-center content-center'>
-                <img className='h-[100px] w-[100px]  rounded-full text-center mx-12 md:mx-[460px]' src="/richard.jpg" alt="Richard" />
+                <img className='h-[100px] w-[100px] md:w-[200px] md:h-[200px] rounded-full text-center mx-8 md:mx-[410px]' src="/richard.jpg" alt="Richard" />
                 <h1 className='font-bold text-xl text-center my-1 '>Richard</h1>
                 <p className='text-sm text-center my-1'>Mobile Developer</p>  
                 <button className='bg-orange-500 text-center px-6 py-2 my-2 font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in'>Read More</button>
               </div>
               <div className='bg-blue-400 text-white rounded-lg  flex flex-col p-10 w-fit gap-2 justify-center items-center text-center content-center'>
-                <img className='h-[100px] w-[100px]  rounded-full text-center mx-12 md:mx-[460px]' src="/image.jpg" alt="Jamal Khan" />
+                <img className='h-[100px] w-[100px] md:h-[200px] md:w-[200px]  rounded-full text-center mx-8 md:mx-[410px]' src="/image.jpg" alt="Jamal Khan" />
                 <h1 className='font-bold text-xl text-center my-1 '>Jamal Khan</h1>
                 <p className='text-sm text-center my-1'>Digital Marketer</p>  
                 <button className='bg-orange-500 text-center px-6 py-2 my-2 font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in'>Read More</button>
               </div>
               <div className='bg-blue-400 text-white flex rounded-lg  flex-col p-10 w-fit gap-2 justify-center  items-center text-center content-center'>
-                <img className='h-[100px] w-[100px]  rounded-full text-center mx-12 md:mx-[460px]' src="/Elly.jpg" alt="Elly Lesonjore" />
+                <img className='h-[100px] w-[100px] md:w-[200px] md:h-[200px] rounded-full text-center mx-8 md:mx-[410px]' src="/Elly.jpg" alt="Elly Lesonjore" />
                 <h1 className='font-bold text-xl text-center my-1'>Elly Lesonjore</h1>
                 <p className='text-sm text-center my-1'>Backend Engineer</p>
                 <button className='bg-orange-500 text-center px-6 py-2 my-2 font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in'>Read More</button>
