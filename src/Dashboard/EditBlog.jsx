@@ -5,6 +5,7 @@ import apiInstance from "../utils/axios";
 import { userdata } from "../plugins/userdata";
 import { Toast } from "../plugins/Toast";
 import Swal from "sweetalert2";
+import Navbar from "../components/Navbar";
 
 function EditBlog() {
     const [post, setEditPost] = useState({ image: "", title: "", description: "", category: "", tags: "", status: "" });
@@ -95,6 +96,8 @@ function EditBlog() {
     };
 
     return (
+        <>
+         <Navbar/>
         <div className="bg-orange-500">
             <section className="md:p-24 md:pb-5 p-3">
                 <div className="container mx-auto bg-orange-100 rounded-lg p-10 mt-16 md:mt-0">
@@ -227,7 +230,7 @@ function EditBlog() {
                     </div>
                 </div>
             </section>
-        </div>
+        </div></>
     );
 }
 

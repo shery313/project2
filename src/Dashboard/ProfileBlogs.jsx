@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import apiInstance from "../utils/axios";
 import { userdata } from "../plugins/userdata";
 import moment from "moment"; 
+import Navbar from "../components/Navbar";
 
 function ProfileBlogs() {
     const [posts, setPosts] = useState([]);
@@ -48,7 +49,7 @@ function ProfileBlogs() {
 
     return (
         <>
-           
+           <Navbar/>
             <section className="py-4 md:mt-20">
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col md:flex-row justify-between items-center mb-4">

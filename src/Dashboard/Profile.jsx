@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Toast } from '../plugins/Toast';
 import apiInstance from "../utils/axios";
 import { userdata } from "../plugins/userdata";
+import Navbar from "../components/Navbar";
 
 function Profile() {
     const [profileData, setProfileData] = useState({
@@ -84,6 +85,8 @@ function Profile() {
     };
 
     return (
+        <>
+        <Navbar/>
         <div className="bg-orange-500">
             <div className='mt-16'>
                 <div className='p-5 flex flex-col md:flex-row'>
@@ -170,7 +173,7 @@ function Profile() {
                     </div>
                 </div>
             </div>
-        </div>
+        </div></>
     );
 }
 

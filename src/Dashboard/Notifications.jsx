@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import apiInstance from "../utils/axios";
 import { userdata } from "../plugins/userdata";
 import { Toast } from "../plugins/Toast";
+import Navbar from "../components/Navbar";
 
 function Notifications() {
     const [noti, setNoti] = useState([]);
@@ -27,6 +28,7 @@ function Notifications() {
 
     return (
         <>
+        <Navbar/>
             
             <section className="pt-5 pb-5">
                 <div className="container mx-auto">
