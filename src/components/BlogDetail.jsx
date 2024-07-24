@@ -154,7 +154,7 @@ const BlogDetail = () => {
               {post?.comments?.map((c, index) => (
                 <div key={index} className='flex gap-2 bg-orange-200 rounded-lg p-2 mb-2 mt-2'>
                   <div className='h-10 w-10 ml-2 mt-2 rounded-full border border-orange-500'>
-                    <img src="/ddd.webp" alt={c.name} />
+                    {/* <img src="/ddd.webp" alt={c.name} /> */}
                   </div>
                   <div className='mt-2'>
                     <h1 className='text-sm font-bold cursor-pointer text-blue-400'><FaUser className='inline' /> {c.name}</h1>
