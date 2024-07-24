@@ -9,7 +9,7 @@ function Contact() {
        <div className="py-36 bg-black text-white">
           <h1 className="text-5xl lg:text-7xl leading-snug font-bold mb-4 py-5 px-4 text-center">Contact Us</h1>
         </div>
-        <div className=' flex flex-col md:flex-row '>
+        <div className=' flex flex-col md:flex-row justify-center items-center content-center '>
           <div className='p-10 '>
             <h1 className='text-black text-3xl font-bold'>Lets talk with us</h1>
             <p className='text-sm w-fit my-2'>Questions,connenctions or suggestions? Simply fill in the form and will be in touch shortly </p>

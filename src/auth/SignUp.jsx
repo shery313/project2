@@ -45,7 +45,7 @@ function SignUp() {
               <button onClick={handleSubmit} className='rounded-lg hover:bg-black hover:text-orange-500 bg-orange-200 h-fit my-1 p-3 text-black font-bold'>Sign up</button>
             </div>
           </div>
-          <div className="img sm:hidden md:block ml-56 md:ml-20">
+          <div className="img hidden md:block ml-56 md:ml-20">
             <img className='h-[500px] w-[500px] flex-wrap' src="/signup-now.png" alt="Sign up" />
           </div>
         </div>

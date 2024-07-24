@@ -11,8 +11,8 @@ function Service() {
         </h1>
       </div>
       <div className="bg-orange-500 flex md:flex-row  flex-col-reverse ">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center">
-          <div className="bg-blue-400 p-10 m-10 w-fit h-fit">
+        <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
+          <div className="bg-blue-400 p-10 m-10 w-fit h-fit flex flex-col justify-center items-center ">
             <img
               className="w-[100px] h-[100px] rounded-full text-center mx-12"
               src="/webdev.png"
@@ -22,7 +22,7 @@ function Service() {
             <p className="text-sm text-center">web development and designing</p>
           </div>
 
-          <div className="bg-blue-400 p-10 m-10 w-fit h-fit">
+          <div className="bg-blue-400 p-10 m-10 w-fit h-fit flex flex-col justify-center items-center">
             <img
               className="w-[100px] h-[100px] rounded-full mx-12"
               src="/webdesi.jpeg"
@@ -31,7 +31,7 @@ function Service() {
             <h1 className="font-bold text-center my-1">Web Designing</h1>
             <p className="text-sm text-center">web development and designing</p>
           </div>
-          <div className="bg-blue-400 p-10 m-10 w-fit h-fit">
+          <div className="bg-blue-400 p-10 m-10 w-fit h-fit flex flex-col justify-center items-center ">
             <img
               className="w-[100px] h-[100px] rounded-full mx-12"
               src="/sim.jpg"
@@ -40,7 +40,7 @@ function Service() {
             <h1 className="font-bold text-center my-1">Mobile Development</h1>
             <p className="text-sm text-center">web development and designing</p>
           </div>
-          <div className="bg-blue-400 p-10 m-10 w-fit h-fit">
+          <div className="bg-blue-400 p-10 m-10 w-fit h-fit flex flex-col justify-center items-center">
             <img
               className="w-[100px] h-[100px] rounded-full mx-12"
               src="/softdev.webp"
