@@ -64,38 +64,38 @@ function Home() {
             At Sera Innovations, we provide a wide range of services tailored to your business needs, including web development, mobile app development, custom software solutions, business intelligence services, desktop application development, and API development & integration.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 justify-center content-center items-center text-center">
-          <div className="flex flex-col  items-center content-center w-fit md:m-5 m-20 p-5 text-gray-500 justify-center text-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 justify-center content-center items-center text-center">
+          <div className="flex flex-col  items-center content-center w-fit md:m-5  p-5 text-gray-500 justify-center text-center">
             <div className="h-20 w-20 rounded-br-none rounded-full bg-orange-500">
               <FaLaptopCode className="text-white w-10 h-10 mx-5 my-5" aria-hidden="true" />
             </div>
             <p className="text-center text-sm w-1/2">Web Development Solutions</p>
           </div>
-          <div className="flex flex-col items-center content-center w-fit md:m-5 m-20 p-5">
+          <div className="flex flex-col items-center content-center w-fit md:m-5  p-5">
             <div className="h-20 w-20 rounded-br-none rounded-full bg-orange-500">
               <FaMobileAlt className="text-white w-10 h-10 mx-5 my-5" aria-hidden="true" />
             </div>
             <p className="text-center text-sm w-1/2">Mobile App Development</p>
           </div>
-          <div className="flex flex-col items-center content-center w-fit md:m-5 mt-2 m-20 p-5">
+          <div className="flex flex-col items-center content-center w-fit md:m-5 mt-2  p-5">
             <div className="h-20 w-20 rounded-br-none rounded-full bg-orange-500">
               <FaCog className="text-white w-10 h-10 mx-5 my-5" aria-hidden="true" />
             </div>
             <p className="text-center text-sm w-1/2">Custom Software Solutions</p>
           </div>
-          <div className="flex flex-col items-center content-center w-fit md:m-5 mt-2 m-20 p-5">
+          <div className="flex flex-col items-center content-center w-fit md:m-5 mt-2  p-5">
             <div className="h-20 w-20 rounded-br-none rounded-full bg-orange-500">
               <FaChartLine className="text-white w-10 h-10 mx-5 my-5" aria-hidden="true" />
             </div>
             <p className="text-center text-sm w-1/2">Business Intelligence Services</p>
           </div>
-          <div className="flex flex-col items-center content-center w-fit md:m-5 mt-2 m-20 p-5">
+          <div className="flex flex-col items-center content-center w-fit md:m-5 mt-2  p-5">
             <div className="h-20 w-20 rounded-br-none rounded-full bg-orange-500">
               <FaDesktop className="text-white w-10 h-10 mx-5 my-5" aria-hidden="true" />
             </div>
             <p className="text-center text-sm w-1/2">Desktop Application Development</p>
           </div>
-          <div className="flex flex-col items-center content-center w-fit md:m-5 m-20 mt-2 p-5">
+          <div className="flex flex-col items-center content-center w-fit md:m-5  mt-2 p-5">
             <div className="h-20 w-20 rounded-br-none rounded-full bg-orange-500">
               <FaCode className="text-white w-10 h-10 mx-5 my-5" aria-hidden="true" />
             </div>

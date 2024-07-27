@@ -22,6 +22,8 @@ import AddBlog from "./Dashboard/AddBlog";
 import Notifications from "./Dashboard/Notifications";
 import ProfileBlogs from "./Dashboard/ProfileBlogs";
 import EditBlog from "./Dashboard/EditBlog";
+import CreatePassword from "./auth/CreatePassword";
+import ForgetPassword from "./auth/ForgetPassword";
 
 function App() {
   return (
@@ -40,6 +42,8 @@ function App() {
           <Route path="/search" element={<SearchResults />} />
           <Route path="/category/:slug" element={<Category />} />
           <Route path="/blog/:slug" element={<BlogDetail />} />
+          <Route path="/create-password" element={<CreatePassword />} />
+          <Route path="/forget-password" element={<ForgetPassword />} />
 
           {/* Private Routes */}
           <Route element={<PrivateRoutes />}>

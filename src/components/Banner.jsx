@@ -9,7 +9,7 @@ function Banner() {
   return (
     <section className="px-4 py-28 mx-auto bg-[var(--color-blue-bg-1)]">
       <div className="text-white text-center">
-        <h1 className="text-5xl lg:text-7xl leading-snug font-bold mb-4">
+        <h1 className="text-3xl md:text-5xl lg:text-7xl  leading-snug font-bold mb-4">
           Welcome to Sera Innovations
         </h1>
         <p className="text-gray-100 lg:w-3/5 mx-auto mb-5 font-primary">
