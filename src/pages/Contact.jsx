@@ -1,38 +1,52 @@
-import React from 'react'
-import { FaAddressBook, FaGlassMartiniAlt, FaLocationArrow, FaMailBulk, FaMailchimp, FaPhone, FaSearchLocation, FaSeedling, FaShare, FaVoicemail } from 'react-icons/fa'
-import Navbar from '../components/Navbar'
+import React from 'react';
+import { FaLocationArrow, FaPhone, FaMailBulk } from 'react-icons/fa';
+import Navbar from '../components/Navbar';
+import { Helmet } from 'react-helmet';
 
 function Contact() {
   return (
     <div>
-      <Navbar/>
-       <div className="py-36 bg-black text-white">
-          <h1 className="text-5xl lg:text-7xl leading-snug font-bold mb-4 py-5 px-4 text-center">Contact Us</h1>
-        </div>
-        <div className=' flex flex-col md:flex-row justify-center items-center content-center '>
-          <div className='p-10 '>
-            <h1 className='text-black text-3xl font-bold'>Lets talk with us</h1>
-            <p className='text-sm w-fit my-2'>Questions,connenctions or suggestions? Simply fill in the form and will be in touch shortly </p>
-            <p className='font-bold my-1'><FaLocationArrow className='inline'/> Islamabad, Pakistan</p>
-            <p className='font-bold my-1'><FaPhone className='inline'/> +923075304856</p>
-            <p className='font-bold my-1'><FaMailBulk className='inline'/> Sheryarsattti6@gmail.com</p>
-            <img className='rounded-full h-[300px] w-[300] mt-5 ml-5' src="/s.jpg" alt="" />
-          </div>
-          <div className="login bg-orange-500  p-10 m-10 shadow-2xl rounded-2xl">
-            <div className='flex flex-col  gap-2'>  
-              <div className='flex flex-col md:flex-row gap-2'>
-              <input placeholder='Name' className='my-2   blockS h-9 border border-gray-200 rounded-lg p-3 hover:outline outline-blue-500 outline-1' type="text" name="" id="" />
-              <input placeholder='Email' className='my-2 h-9  rounded-lg border border-gray-200 p-3 hover:outline outline-blue-500 outline-1'  type="email" name="" id="" />
-              </div>
-              <input placeholder='Subject' className='my-2 h-9 rounded-lg border border-gray-200 p-3 hover:outline outline-blue-500 outline-1'  type="text" name="" id="" />
-              <textarea placeholder='Your Message' className='my-2 h-32 rounded-lg border border-gray-200 p-3 hover:outline outline-blue-500 outline-1'  type="text" name="" id="" />
-              <button className='rounded-lg hover:bg-black hover:text-orange-500 bg-orange-200 h-fit my-1 p-3 text-black font-bold'>Send Message</button>
+      <Helmet>
+        <title>Contact Us - SERA Innovations</title>
+        <meta name="description" content="Get in touch with SERA Innovations. Contact us for questions, connections, or suggestions. We are here to help you." />
+        <meta name="keywords" content="contact, SERA Innovations, Islamabad, Pakistan, phone, email, address" />
+        <meta property="og:title" content="Contact Us - SERA Innovations" />
+        <meta property="og:description" content="Get in touch with SERA Innovations. Contact us for questions, connections, or suggestions. We are here to help you." />
+        <meta property="og:image" content="https://serainnovations.pro/path-to-your-image.jpg" />
+        <meta property="og:url" content="https://serainnovations.pro/contact" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us - SERA Innovations" />
+        <meta name="twitter:description" content="Get in touch with SERA Innovations. Contact us for questions, connections, or suggestions. We are here to help you." />
+        <meta name="twitter:image" content="https://serainnovations.pro/path-to-your-image.jpg" />
+      </Helmet>
+      <Navbar />
+      <header className="py-36 bg-black text-white">
+        <h1 className="text-5xl lg:text-7xl leading-snug font-bold mb-4 py-5 px-4 text-center">Contact Us</h1>
+      </header>
+      <main className='flex flex-col md:flex-row justify-center items-center content-center'>
+        <section className='p-10'>
+          <h2 className='text-black text-3xl font-bold'>Let's talk with us</h2>
+          <p className='text-sm w-fit my-2'>Questions, connections, or suggestions? Simply fill in the form and we'll be in touch shortly.</p>
+          <p className='font-bold my-1'><FaLocationArrow className='inline' /> Islamabad, Pakistan</p>
+          <p className='font-bold my-1'><FaPhone className='inline' /> +923075304856</p>
+          <p className='font-bold my-1'><FaMailBulk className='inline' /> Sheryarsattti6@gmail.com</p>
+          <img className='rounded-full h-[300px] w-[300px] mt-5 ml-5' src="/s.jpg" alt="Contact Us" />
+        </section>
+        <section className="login bg-orange-500 p-10 m-10 shadow-2xl rounded-2xl">
+          <form className='flex flex-col gap-2'>
+            <div className='flex flex-col md:flex-row gap-2'>
+              <input placeholder='Name' className='my-2 blockS h-9 border border-gray-200 rounded-lg p-3 hover:outline outline-blue-500 outline-1' type="text" name="name" required />
+              <input placeholder='Email' className='my-2 h-9 rounded-lg border border-gray-200 p-3 hover:outline outline-blue-500 outline-1' type="email" name="email" required />
             </div>
-        </div>
-
-        </div>
+            <input placeholder='Subject' className='my-2 h-9 rounded-lg border border-gray-200 p-3 hover:outline outline-blue-500 outline-1' type="text" name="subject" required />
+            <textarea placeholder='Your Message' className='my-2 h-32 rounded-lg border border-gray-200 p-3 hover:outline outline-blue-500 outline-1' name="message" required />
+            <button className='rounded-lg hover:bg-black hover:text-orange-500 bg-orange-200 h-fit my-1 p-3 text-black font-bold' type="submit">Send Message</button>
+          </form>
+        </section>
+      </main>
     </div>
-  )
+  );
 }
 
-export default Contact
+export default Contact;

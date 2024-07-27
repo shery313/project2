@@ -13,10 +13,17 @@ import {
   FaPlay,
 } from "react-icons/fa";
 import Navbar from "../components/Navbar";
+import { Helmet } from "react-helmet";
 
 function Home() {
   return (
     <div>
+      <Helmet>
+      <title>Sera Innovations - Your Trusted Software and Digital Services Partner</title>
+      <meta name="description" content="Sera Innovations provides top-tier software and digital services including web development, mobile app development, and digital marketing. Partner with us for innovative solutions tailored to your needs." />
+      <meta name="keywords" content="Serainnovations, Sera Innovations, software development, web development, mobile app development, digital marketing, innovative solutions, digital services" />
+      <meta name="author" content="Sera Innovations" /> 
+      </Helmet>
       <Navbar />
       <Banner />
       <section className="w-full bg-orange-500 flex md:flex-row flex-col justify-center items-center content-center">
