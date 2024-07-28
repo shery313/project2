@@ -2,8 +2,37 @@ import React from 'react';
 import { FaLocationArrow, FaPhone, FaMailBulk } from 'react-icons/fa';
 import Navbar from '../components/Navbar';
 import { Helmet } from 'react-helmet';
+import { Toast } from '../plugins/Toast';
+import { useState } from 'react';
+import apiInstance from '../utils/axios';
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    apiInstance.post('/contact', formData)
+      .then(response => {
+        Toast('','Message sent successfully')
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      })
+      .catch(error => {
+        console.error('There was an error sending the message!', error);
+      });
+  };
+
   return (
     <div>
       <Helmet>
@@ -37,13 +66,13 @@ function Contact() {
           
         </section>
         <section className="login bg-orange-500 p-10 m-10 shadow-2xl rounded-2xl">
-          <form className='flex flex-col gap-2'>
+          <form className='flex flex-col gap-2' onSubmit={handleSubmit}>
             <div className='flex flex-col md:flex-row gap-2'>
-              <input placeholder='Name' className='my-2 blockS h-9 border border-gray-200 rounded-lg p-3 hover:outline outline-blue-500 outline-1' type="text" name="name" required />
-              <input placeholder='Email' className='my-2 h-9 rounded-lg border border-gray-200 p-3 hover:outline outline-blue-500 outline-1' type="email" name="email" required />
+              <input placeholder='Name' onChange={handleChange} className='my-2 blockS h-9 border border-gray-200 rounded-lg p-3 hover:outline outline-blue-500 outline-1' type="text" name="name" required />
+              <input onChange={handleChange} placeholder='Email' className='my-2 h-9 rounded-lg border border-gray-200 p-3 hover:outline outline-blue-500 outline-1' type="email" name="email" required />
             </div>
-            <input placeholder='Subject' className='my-2 h-9 rounded-lg border border-gray-200 p-3 hover:outline outline-blue-500 outline-1' type="text" name="subject" required />
-            <textarea placeholder='Your Message' className='my-2 h-32 rounded-lg border border-gray-200 p-3 hover:outline outline-blue-500 outline-1' name="message" required />
+            <input onChange={handleChange} placeholder='Subject' className='my-2 h-9 rounded-lg border border-gray-200 p-3 hover:outline outline-blue-500 outline-1' type="text" name="subject" required />
+            <textarea onChange={handleChange} placeholder='Your Message' className='my-2 h-32 rounded-lg border border-gray-200 p-3 hover:outline outline-blue-500 outline-1' name="message" required />
             <button className='rounded-lg hover:bg-black hover:text-orange-500 bg-orange-200 h-fit my-1 p-3 text-black font-bold' type="submit">Send Message</button>
           </form>
         </section>
