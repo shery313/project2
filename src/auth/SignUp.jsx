@@ -48,7 +48,7 @@ function SignUp() {
         <section className='flex md:flex-row flex-col gap-2'>
           <div className="login p-20 bg-orange-500 shadow-lg">
             <header>
-              <h1 className='text-5xl mx-5 font-bold'>Sign up</h1>
+              <h1 className='md:text-5xl text-3xl mx-5 font-bold'>Sign up</h1>
             </header>
             <form className='flex flex-col m-5'>
               <label htmlFor="fullName">Full Name</label>

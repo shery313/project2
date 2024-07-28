@@ -30,11 +30,11 @@ function Service() {
           <div className="bg-blue-400 p-10 m-5 w-fit h-fit flex flex-col justify-center items-center">
             <img
               className="w-[100px] h-[100px] rounded-full mb-3"
-              src="/webdev.png"
+              src="/mobiledve.jpeg"
               alt="Web Development"
             />
             <h1 className="font-bold text-center my-1">Web Development</h1>
-            <p className="text-sm text-center">Professional web development and design services</p>
+            <p className="text-sm text-center">Professional web development </p>
           </div>
 
           <div className="bg-blue-400 p-10 m-5 w-fit h-fit flex flex-col justify-center items-center">

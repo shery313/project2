@@ -31,7 +31,10 @@ function Contact() {
           <p className='font-bold my-1'><FaLocationArrow className='inline' /> Islamabad, Pakistan</p>
           <p className='font-bold my-1'><FaPhone className='inline' /> +923075304856</p>
           <p className='font-bold my-1'><FaMailBulk className='inline' /> Sheryarsattti6@gmail.com</p>
-          <img className='rounded-full h-[300px] w-[300px] mt-5 ml-5' src="/s.jpg" alt="Contact Us" />
+          <div className='bg-black rounded-full h-[300px] w-[300px] shadow-lg mt-4 flex items-center'>
+            <img className='rounded-full h-[300px] w-[300px]  mt-10' src="/seeera.png" alt="Contact Us" />
+          </div>
+          
         </section>
         <section className="login bg-orange-500 p-10 m-10 shadow-2xl rounded-2xl">
           <form className='flex flex-col gap-2'>

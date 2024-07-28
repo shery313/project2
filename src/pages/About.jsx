@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Helmet } from 'react-helmet';
 
 export default function About() {
   const settings = {
@@ -15,7 +16,7 @@ export default function About() {
 
   return (
     <>
-      <head>
+      <Helmet>
         <title>About Us - SERA Innovations</title>
         <meta name="description" content="Learn more about SERA Innovations, your trusted partner for digital solutions including web development, mobile app development, and digital marketing." />
         <meta name="keywords" content="Serainnovations, Sera Innovations, about Sera Innovations, software development, web development, mobile app development, digital marketing, digital solutions" />
@@ -28,7 +29,7 @@ export default function About() {
         <meta name="twitter:title" content="About Us - SERA Innovations" />
         <meta name="twitter:description" content="Learn more about SERA Innovations, your trusted partner for digital solutions." />
         <meta name="twitter:image" content="https://serainnovations.pro/path-to-your-image.jpg" />
-      </head>
+      </Helmet>
       <Navbar />
       <div className="py-36 bg-black text-white">
         <h1 className="text-5xl lg:text-7xl leading-snug font-bold mb-4 py-5 px-4 text-center">About Us</h1>

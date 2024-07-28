@@ -19,10 +19,19 @@ function Home() {
   return (
     <div>
       <Helmet>
-      <title>Sera Innovations - Your Trusted Software and Digital Services Partner</title>
-      <meta name="description" content="Sera Innovations provides top-tier software and digital services including web development, mobile app development, and digital marketing. Partner with us for innovative solutions tailored to your needs." />
-      <meta name="keywords" content="Serainnovations, Sera Innovations, software development, web development, mobile app development, digital marketing, innovative solutions, digital services" />
-      <meta name="author" content="Sera Innovations" /> 
+        <title>Sera Innovations - Your Trusted Software and Digital Services Partner</title>
+        <meta name="description" content="Sera Innovations provides top-tier software and digital services including web development, mobile app development, and digital marketing. Partner with us for innovative solutions tailored to your needs." />
+        <meta name="keywords" content="Sera Innovations, serainnovations, Sera Innovations software development, web development, mobile app development, digital marketing, innovative solutions, digital services" />
+        <meta name="author" content="Sera Innovations" />
+        <meta property="og:title" content="Sera Innovations - Your Trusted Software and Digital Services Partner" />
+        <meta property="og:description" content="Sera Innovations provides top-tier software and digital services including web development, mobile app development, and digital marketing." />
+        <meta property="og:image" content="https://serainnovations.pro/path-to-your-image.jpg" />
+        <meta property="og:url" content="https://serainnovations.pro" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Sera Innovations - Your Trusted Software and Digital Services Partner" />
+        <meta name="twitter:description" content="Sera Innovations provides top-tier software and digital services including web development, mobile app development, and digital marketing." />
+        <meta name="twitter:image" content="https://serainnovations.pro/path-to-your-image.jpg" />
       </Helmet>
       <Navbar />
       <Banner />
@@ -35,7 +44,7 @@ function Home() {
             For your Business
           </h2>
           <p className="text-sm md:w-1/2 text-white">
-            Transforming ideas into digital solutions that drive your business forward. Our services are designed to enhance your online presence, streamline operations, and empower growth.
+            Transforming ideas into digital solutions that drive your business forward. Sera Innovations are designed to enhance your online presence, streamline operations, and empower growth.
           </p>
           <div className="flex space-x-2 space-y-2 my-2">
             <button className="bg-orange-200 px-6 py-2 font-medium rounded hover:bg-black hover:text-[var(--color-orange)] transition-all duration-200 ease-in">
@@ -66,43 +75,43 @@ function Home() {
       </div>
       <section className="m-10">
         <div className="text-center">
-          <h2 className=" md:text-2xl text-xl font-bold">Services We Offer</h2>
-          <p className="text-sm text-gray-500 ">
+          <h2 className="md:text-2xl text-xl font-bold">Services We Offer</h2>
+          <p className="text-sm text-gray-500">
             At Sera Innovations, we provide a wide range of services tailored to your business needs, including web development, mobile app development, custom software solutions, business intelligence services, desktop application development, and API development & integration.
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 justify-center content-center items-center text-center">
-          <div className="flex flex-col  items-center content-center w-fit md:m-5  p-5 text-gray-500 justify-center text-center">
+          <div className="flex flex-col items-center content-center w-fit md:m-5 p-5 text-gray-500 justify-center text-center">
             <div className="h-20 w-20 rounded-br-none rounded-full bg-orange-500">
               <FaLaptopCode className="text-white w-10 h-10 mx-5 my-5" aria-hidden="true" />
             </div>
             <p className="text-center text-sm w-1/2">Web Development Solutions</p>
           </div>
-          <div className="flex flex-col items-center content-center w-fit md:m-5  p-5">
+          <div className="flex flex-col items-center content-center w-fit md:m-5 p-5">
             <div className="h-20 w-20 rounded-br-none rounded-full bg-orange-500">
               <FaMobileAlt className="text-white w-10 h-10 mx-5 my-5" aria-hidden="true" />
             </div>
             <p className="text-center text-sm w-1/2">Mobile App Development</p>
           </div>
-          <div className="flex flex-col items-center content-center w-fit md:m-5 mt-2  p-5">
+          <div className="flex flex-col items-center content-center w-fit md:m-5 mt-2 p-5">
             <div className="h-20 w-20 rounded-br-none rounded-full bg-orange-500">
               <FaCog className="text-white w-10 h-10 mx-5 my-5" aria-hidden="true" />
             </div>
             <p className="text-center text-sm w-1/2">Custom Software Solutions</p>
           </div>
-          <div className="flex flex-col items-center content-center w-fit md:m-5 mt-2  p-5">
+          <div className="flex flex-col items-center content-center w-fit md:m-5 mt-2 p-5">
             <div className="h-20 w-20 rounded-br-none rounded-full bg-orange-500">
               <FaChartLine className="text-white w-10 h-10 mx-5 my-5" aria-hidden="true" />
             </div>
             <p className="text-center text-sm w-1/2">Business Intelligence Services</p>
           </div>
-          <div className="flex flex-col items-center content-center w-fit md:m-5 mt-2  p-5">
+          <div className="flex flex-col items-center content-center w-fit md:m-5 mt-2 p-5">
             <div className="h-20 w-20 rounded-br-none rounded-full bg-orange-500">
               <FaDesktop className="text-white w-10 h-10 mx-5 my-5" aria-hidden="true" />
             </div>
             <p className="text-center text-sm w-1/2">Desktop Application Development</p>
           </div>
-          <div className="flex flex-col items-center content-center w-fit md:m-5  mt-2 p-5">
+          <div className="flex flex-col items-center content-center w-fit md:m-5 mt-2 p-5">
             <div className="h-20 w-20 rounded-br-none rounded-full bg-orange-500">
               <FaCode className="text-white w-10 h-10 mx-5 my-5" aria-hidden="true" />
             </div>
