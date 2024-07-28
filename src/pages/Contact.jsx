@@ -25,7 +25,7 @@ function Contact() {
     e.preventDefault();
     apiInstance.post('/contact', formData)
       .then(response => {
-        Toast('','Message sent successfully')
+        Toast('success','Message sent successfully')
         setFormData({ name: '', email: '', subject: '', message: '' });
       })
       .catch(error => {
