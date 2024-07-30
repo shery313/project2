@@ -24,6 +24,7 @@ import ProfileBlogs from "./Dashboard/ProfileBlogs";
 import EditBlog from "./Dashboard/EditBlog";
 import CreatePassword from "./auth/CreatePassword";
 import ForgetPassword from "./auth/ForgetPassword";
+import EmailVerify from "./auth/EmailVerify";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/create-password" element={<CreatePassword />} />
           <Route path="/forget-password" element={<ForgetPassword />} />
+          <Route path="/verify-email" element={<EmailVerify />} />
 
           {/* Private Routes */}
           <Route element={<PrivateRoutes />}>
