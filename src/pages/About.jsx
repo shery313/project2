@@ -68,18 +68,18 @@ export default function About() {
           <div>
             <Slider {...settings}>
               {[
-                { name: 'Sheryar Azhar', role: 'Web Developer', img: '/s.jpg' },
-                { name: 'Alfred', role: 'Web Developer', img: '/alfred.jpg' },
-                { name: 'Richard', role: 'Mobile Developer', img: '/profile5.jpeg' },
-                { name: 'Jamal Khan', role: 'Digital Marketer', img: '/image.jpg' },
-                { name: 'Elly Lesonjore', role: 'Backend Engineer', img: '/Elly.jpg' },
+                { name: 'Sheryar Azhar', role: 'Web Developer', img: '/s.jpg',link:'' },
+                { name: 'Alfred', role: 'Web Developer', img: '/alfred.jpg' ,link:'' },
+                { name: 'Richard', role: 'Mobile Developer', img: '/profile5.jpeg',link:'https://richardngasike.netlify.app/' },
+                { name: 'Jamal Khan', role: 'Digital Marketer', img: '/image.jpg' ,link:'' },
+                { name: 'Elly Lesonjore', role: 'Backend Engineer', img: '/Elly.jpg',link:'' },
               ].map((member, index) => (
                 <div key={index}>
                   <div className='flex flex-col items-center justify-center bg-blue-400 h-[250px] w-[250px] md:w-full md:h-full text-white p-3 md:p-6'>
                     <img className='md:h-[200px] md:w-[200px] h-[100px] w-[100px] rounded-full mb-4' src={member.img} alt={member.name} />
                     <h1 className='font-bold md:text-xl text-sm text-center'>{member.name}</h1>
                     <p className='md:text-sm text-xs text-center'>{member.role}</p>
-                    <button className='bg-orange-500 text-center px-4 py-2 my-2 text-xs font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in'>Read More</button>
+                    <button className='bg-orange-500 text-center px-4 py-2 my-2 text-xs font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in'><a href={member.link}>Read more</a></button>
                   </div>
                 </div>
               ))}
