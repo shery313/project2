@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -6,12 +6,33 @@ import "slick-carousel/slick/slick-theme.css";
 import { Helmet } from 'react-helmet';
 
 export default function About() {
+  const [slidesToShow, setSlidesToShow] = useState(1);
+
+  const handleResize = () => {
+    if (window.innerWidth >= 768) {
+      setSlidesToShow(2);
+    } else {
+      setSlidesToShow(1);
+    }
+  };
+
+  useEffect(() => {
+    handleResize(); // Set initial value
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
-    slidesToShow: 1,
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
+    autoplay: true,
+    speed: 5000,
+    autoplaySpeed: 5000,
+    cssEase: "linear"
   };
 
   return (
@@ -44,39 +65,25 @@ export default function About() {
             </div>
           </div>
           <h1 className='text-3xl text-center font-bold my-5 mx-5'>Our Team</h1>
-          <div  >
+          <div>
             <Slider {...settings}>
-              <div className='bg-blue-400 rounded-lg   text-white flex flex-col p-10  content-center text-center gap-2 justify-center items-center'>
-                <img className='md:h-[200px] md:w-[200px] h-[100px] w-[100px] rounded-full mx-8 md:mx-[410px]' src="/s.jpg" alt="Sheryar Azhar" />
-                <h1 className='font-bold text-xl text-center my-1'>Sheryar Azhar</h1>
-                <p className='text-sm text-center my-1'>Web Developer</p>  
-                <button className='bg-orange-500 text-center px-6 py-2 my-2 font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in'>Read More</button>
-              </div>
-              <div className='bg-blue-400 text-white rounded-lg  flex flex-col p-10 w-fit gap-2 justify-center items-center text-center '>
-                <img className='md:h-[200px] md:w-[200px] w-[100px] h-[100px] rounded-full text-center mx-8 md:mx-[410px]' src="/alfred.jpg" alt="Alfred" />
-                <h1 className='font-bold text-xl text-center my-1'>Alfred</h1>
-                <p className='text-sm text-center my-1'>Web Developer</p>  
-                <button className='bg-orange-500 text-center px-6 py-2 my-2 font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in'>Read More</button>
-              </div>
-              <div className='bg-blue-400 text-white rounded-lg  flex flex-col p-10 w-fit gap-2 justify-center items-center text-center content-center'>
-                <img className='h-[100px] w-[100px] md:w-[200px] md:h-[200px] rounded-full text-center mx-8 md:mx-[410px]' src="/richard.jpg" alt="Richard" />
-                <h1 className='font-bold text-xl text-center my-1 '>Richard</h1>
-                <p className='text-sm text-center my-1'>Mobile Developer</p>  
-                <button className='bg-orange-500 text-center px-6 py-2 my-2 font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in'>Read More</button>
-              </div>
-              <div className='bg-blue-400 text-white rounded-lg  flex flex-col p-10 w-fit gap-2 justify-center items-center text-center content-center'>
-                <img className='h-[100px] w-[100px] md:h-[200px] md:w-[200px]  rounded-full text-center mx-8 md:mx-[410px]' src="/image.jpg" alt="Jamal Khan" />
-                <h1 className='font-bold text-xl text-center my-1 '>Jamal Khan</h1>
-                <p className='text-sm text-center my-1'>Digital Marketer</p>  
-                <button className='bg-orange-500 text-center px-6 py-2 my-2 font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in'>Read More</button>
-              </div>
-              <div className='bg-blue-400 text-white flex rounded-lg  flex-col p-10 w-fit gap-2 justify-center  items-center text-center content-center'>
-                <img className='h-[100px] w-[100px] md:w-[200px] md:h-[200px] rounded-full text-center mx-8 md:mx-[410px]' src="/Elly.jpg" alt="Elly Lesonjore" />
-                <h1 className='font-bold text-xl text-center my-1'>Elly Lesonjore</h1>
-                <p className='text-sm text-center my-1'>Backend Engineer</p>
-                <button className='bg-orange-500 text-center px-6 py-2 my-2 font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in'>Read More</button>
-              </div>
-            </Slider>  
+              {[
+                { name: 'Sheryar Azhar', role: 'Web Developer', img: '/s.jpg' },
+                { name: 'Alfred', role: 'Web Developer', img: '/alfred.jpg' },
+                { name: 'Richard', role: 'Mobile Developer', img: '/profile5.jpeg' },
+                { name: 'Jamal Khan', role: 'Digital Marketer', img: '/image.jpg' },
+                { name: 'Elly Lesonjore', role: 'Backend Engineer', img: '/Elly.jpg' },
+              ].map((member, index) => (
+                <div key={index}>
+                  <div className='flex flex-col items-center justify-center bg-blue-400 h-[250px] w-[250px] md:w-full md:h-full text-white p-3 md:p-6'>
+                    <img className='md:h-[200px] md:w-[200px] h-[100px] w-[100px] rounded-full mb-4' src={member.img} alt={member.name} />
+                    <h1 className='font-bold md:text-xl text-sm text-center'>{member.name}</h1>
+                    <p className='md:text-sm text-xs text-center'>{member.role}</p>
+                    <button className='bg-orange-500 text-center px-4 py-2 my-2 text-xs font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in'>Read More</button>
+                  </div>
+                </div>
+              ))}
+            </Slider>
           </div>
         </div>
       </div>
