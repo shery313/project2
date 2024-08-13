@@ -11,8 +11,10 @@ function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async () => {
+    setLoading(true);
     if (password !== password2) {
       Toast(
         "error",
@@ -31,8 +33,10 @@ function SignUp() {
     );
     if (data) {
       navigate("/login");
+      setLoading(false);
     } else {
       Toast("error", error, "Try again later!");
+      setLoading(false);
     }
   };
 
@@ -119,7 +123,7 @@ function SignUp() {
                 className="rounded-lg hover:bg-pink-300 hover:text-orange-500 bg-orange-200 h-fit my-1 p-3 text-black font-bold"
                 type="button"
               >
-                Sign up
+                {loading ? "Loading..." : "Sign up"}
               </button>
             </form>
           </div>
