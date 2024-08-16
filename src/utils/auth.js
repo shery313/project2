@@ -58,21 +58,21 @@ export const setUser=()=>{
     setAuthUser(token,refresh)
 
 }
-export const login=async (email,password)=>{
-    
-    const {data,status}=await axios.post('user/token/',{
-        email,password
-    });
-    if(status===200){
-        setAuthUser(data.access,data.refresh)
-        Toast("success","login Successfully!",`Login successfully with ${email}`)
-
-    }else{
-        Toast('error','Oops!','Something Went Wrong!')
+export const login = async (email, password) => {
+    try {
+      const { data, status } = await axios.post('user/token/', { email, password });
+      if (status === 200) {
+        setAuthUser(data.access, data.refresh);
+        Toast("success", "Login Successfully!", `Login successfully with ${email}`);
+        return {data:data,error:null}
+      }
+    } catch (error) {
+      console.error(error);
+      Toast('error', 'Oops!', 'Something Went Wrong!');
+      return { data: null, error: error.response.data.detail };
     }
-    
-    return {data,error:null}
-}
+  };
+  
 
 export const register = async(
     full_name,email,password,password2)=>{
@@ -87,7 +87,7 @@ export const register = async(
 
 
     }catch(error){
-        return {data:null , error:error.response.data||"Something Went Wrong "}
+        return {data:null , error:error.response.data.email||"Something Went Wrong "}
 
     }
 

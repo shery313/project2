@@ -20,6 +20,7 @@ import Cookies from 'js-cookie'
 function BlogCards() {
   const [blogs, setBlogs] = useState([]);
   const [error, setError] = useState(null);
+  const[loading,setLoading]=useState(false)
   const itemsPerPage = 6;
   const [currentPage, setCurrentPage] = useState(1);
   const indexOfLastPage = itemsPerPage * currentPage;
@@ -42,19 +43,22 @@ function BlogCards() {
   );
 
   const fetchCategory = async () => {
-    let url = "https://sera-backend.up.railway.app/api/v1/post/category/list/";
-    const response = await fetch(url);
+    // let url = "https://sera-backend.up.railway.app/api/v1/post/category/list/";
+    const response = await apiInstance.get('/post/category/list/')
     setCategory(response.data);
   };
 
   async function fetchBlogs() {
     try {
-      const url = "https://sera-backend.up.railway.app/api/v1/post/lists/";
-      const response = await fetch(url);
-      const data = await response.json();
+      setLoading(true)
+      // const url = "https://sera-backend.up.railway.app/api/v1/post/lists/";
+      const response = await apiInstance.get('/post/lists');
+      const data = await response.data
+      setLoading(false)
       const sorted = data?.sort((a, b) => b.view - a.view);
       setBlogs(sorted);
     } catch (error) {
+      setLoading(false)
       setError(error);
     }
   }
@@ -112,8 +116,11 @@ function BlogCards() {
   return (
     <div>
       <Navbar />
-      <main className="grid md:grid-cols-2 grid-cols-1 gap-8">
-        {postItems.map((blog) => (
+      
+      
+      {loading? <div className='flex justify-center items-center content-center'><img className="rounded-s-3xl h-20 w-20" src="loadinggif.gif" alt="Loading gif" /></div>:postItems.map((blog) => (
+        <>
+        <main className="grid md:grid-cols-2 grid-cols-1 gap-8">
           <article key={blog.id} className="p-5 shadow-lg rounded cursor-pointer relative">
             <header>
               <Link to={`/blog/${blog.slug}`}>
@@ -168,8 +175,9 @@ function BlogCards() {
               </p>
             </footer>
           </article>
-        ))}
-      </main>
+          </main>
+        </>))}
+      
       <nav className="flex mt-5 justify-center items-center gap-8 text-xl mb-5">
         <ul className="pagination">
           <li

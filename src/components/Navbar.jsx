@@ -106,7 +106,7 @@ function Navbar() {
         </div>
       </nav>
       <ul
-        className={`md:flex-col md:hidden gap-12 text-lg block space-y-4 px-4 py-6 mt-14 right-0 text-black bg-white ${
+        className={`md:flex-col md:hidden gap-12 text-lg block space-y-4 px-4 py-6 mt-14 right-0 text-white bg-[var(--color-blue-bg-1)] ${
           isMenuOpen
             ? "fixed top-5 left-0 w-fit rounded-lg transition-all ease-out duration-150"
             : "hidden"
@@ -143,8 +143,9 @@ function Navbar() {
           <li onClick={toggleMenu}>Blogs</li>
         </NavLink>
       </ul>
+      {/* second list  */}
       <ul
-        className={`md:flex-col gap-12 md:text-lg text-sm block space-y-4 px-4 py-6 mt-14 text-black rounded-lg bg-white ${
+        className={`md:flex-col gap-12 md:text-lg text-sm block space-y-4 px-4 py-6 mt-14 text-white rounded-lg bg-[var(--color-blue-bg-1)] ${
           isProfileOpen
             ? "fixed top-5 right-0 transition-all ease-out duration-150 w-fit ml-52"
             : "hidden"

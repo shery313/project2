@@ -10,10 +10,10 @@ import Cookies from 'js-cookie'
 
 const BlogDetail = () => {
   const params = useParams();
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState("");
   const [post, setPost] = useState({});
-  const [createComment, setCreateComment] = useState({
-    full_name: '', email: '', comment: ''
-  });
+  
   const [likePost, setLikedPost] = useState(() => {
     const likedData = Cookies.get('likedPosts');
     return likedData ? JSON.parse(likedData) : {};
@@ -22,6 +22,7 @@ const BlogDetail = () => {
     const bookmarkedData = Cookies.get('bookmarked');
     return bookmarkedData ? JSON.parse(bookmarkedData) : {};
   });
+  // const [postPk,setPostPk]=useState();
 
   const fetchData = async () => {
     try {
@@ -55,33 +56,7 @@ const BlogDetail = () => {
     }
   };
 
-  const handleCommentChange = (event) => {
-    setCreateComment({
-      ...createComment,
-      [event.target.name]: event.target.value,
-    });
-  };
-
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const jsonData = {
-        post_id: post?.id,
-        name: createComment.full_name,
-        email: createComment.email,
-        comment: createComment.comment,
-      };
-      await apiInstance.post('post/comment-post/', jsonData);
-      Toast("success", "Comment added successfully", '');
-      setCreateComment({
-        full_name: '', email: '', comment: '',
-      });
-      fetchData();
-      
-    } catch (error) {
-      console.error('Failed to post comment:', error);
-    }
-  };
+  
 
   const handleBookmarkPost = async (postId, slug) => {
     try {
@@ -109,6 +84,27 @@ const BlogDetail = () => {
   useEffect(() => {
     fetchData();
   }, [params.slug]);
+  
+
+
+  
+
+  useEffect(() => {
+    apiInstance.get(`/posts/${post?.id}/comments/${userdata()?.user_id}`)
+      .then(res => setComments(res.data))
+      .catch(err => console.error(err));
+  }, [post?.id]);
+
+  const handleCommentSubmit = (event) => {
+    event.preventDefault();
+    apiInstance.post(`/posts/${post?.id}/comments/${userdata()?.user_id}`, { content: newComment })
+      .then(res => {
+        setComments([...comments, res.data]);
+        setNewComment("");
+        Toast('success','comment successful')
+      })
+      .catch(err => console.error(err));
+  };
 
   return (
     <div>
@@ -151,47 +147,29 @@ const BlogDetail = () => {
           <h1 className='text-xl font-bold text-center m-2'>{post?.comments?.length} Comments</h1>
           <div className='flex flex-col gap-2'>
             <div>
-              {post?.comments?.map((c, index) => (
+              {comments?.map((c, index) => (
                 <div key={index} className='flex gap-2 bg-orange-200 rounded-lg p-2 mb-2 mt-2'>
-                  <div className='h-10 w-10 ml-2 mt-2 rounded-full border border-orange-500'>
-                    {/* <img src="/ddd.webp" alt={c.name} /> */}
-                  </div>
+                  
                   <div className='mt-2'>
-                    <h1 className='text-sm font-bold cursor-pointer text-blue-400'><FaUser className='inline' /> {c.name}</h1>
-                    <p className='text-gray-500 text-sm'><FaCalendar className='inline' /> {moment(c.date).format("DD MMM YYYY HH:mm ")}</p>
-                    <p>{c.comment}</p>
-                    {c.replay && <p>Replay: {c.replay}</p>}
+                    <h1 className='text-sm font-bold cursor-pointer text-blue-400'><FaUser className='inline' /> {c.user.username}</h1>
+                    <p className='text-gray-500 text-sm'><FaCalendar className='inline' /> {moment(c.created_at).format("DD MMM YYYY HH:mm ")}</p>
+                    <p>{c.content}</p>
+                    
                   </div>
                 </div>
               ))}
+              
+              
             </div>
           </div>
           <div className='bg-orange-200 p-5 mt-2 rounded-lg'>
-            <h1 className='font-bold text-lg'>Leave a Reply</h1>
-            <p className='text-sm'>Your email won't be shared with anyone.</p>
-            <form onSubmit={handleFormSubmit}>
-              <div className='flex md:flex-row flex-col gap-2'>
-                <input
-                  placeholder='Name'
-                  value={createComment.full_name}
-                  onChange={handleCommentChange}
-                  className='block my-1 border w-full border-gray-200 rounded-lg p-3 hover:outline outline-blue-500 outline-1'
-                  type="text"
-                  name="full_name"
-                />
-                <input
-                  placeholder='Email'
-                  value={createComment.email}
-                  onChange={handleCommentChange}
-                  className='rounded-lg my-1 border w-full border-gray-200 p-3 hover:outline outline-blue-500 outline-1'
-                  type="email"
-                  name="email"
-                />
-              </div>
+            <h1 className='font-bold text-lg'>Leave a Comment</h1>
+            <form onSubmit={handleCommentSubmit}>
+              
               <textarea
                 className='block md:w-[500px] my-1 rounded-lg p-2 w-full '
-                value={createComment.comment}
-                onChange={handleCommentChange}
+                value={newComment}
+                onChange={(e)=>(setNewComment(e.target.value))}
                 name="comment"
                 placeholder='Write your message'
               ></textarea>
@@ -205,5 +183,6 @@ const BlogDetail = () => {
     </div>
   );
 };
+
 
 export default BlogDetail;

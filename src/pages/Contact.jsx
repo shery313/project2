@@ -13,6 +13,7 @@ function Contact() {
     subject: '',
     message: ''
   });
+  const [loading,setLoading]=useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -23,12 +24,15 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true)
     apiInstance.post('/contact', formData)
       .then(response => {
         Toast('success','Message sent successfully')
         setFormData({ name: '', email: '', subject: '', message: '' });
+        setLoading(false)
       })
       .catch(error => {
+        setLoading(false)
         console.error('There was an error sending the message!', error);
       });
   };
@@ -73,7 +77,7 @@ function Contact() {
             </div>
             <input onChange={handleChange} placeholder='Subject' className='my-2 h-9 rounded-lg border border-gray-200 p-3 hover:outline outline-blue-500 outline-1' type="text" name="subject" required />
             <textarea onChange={handleChange} placeholder='Your Message' className='my-2 h-32 rounded-lg border border-gray-200 p-3 hover:outline outline-blue-500 outline-1' name="message" required />
-            <button className='rounded-lg hover:bg-black hover:text-orange-500 bg-orange-200 h-fit my-1 p-3 text-black font-bold' type="submit">Send Message</button>
+            <button className='rounded-lg hover:bg-black hover:text-orange-500 bg-orange-200 h-fit my-1 p-3 text-black font-bold' type="submit">{loading ? <div className='flex justify-center items-center content-center'><img className="rounded-s-3xl w-5 h-5" src="loadinggif.gif" alt="Loading gif" /></div> :'Send Message'}</button>
           </form>
         </section>
       </main>

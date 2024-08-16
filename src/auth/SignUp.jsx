@@ -11,18 +11,26 @@ function SignUp() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
+  const[isLoading,setIsLoading]=useState(false)
 
   const handleSubmit = async () => {
+    setIsLoading(true)
     if (password !== password2) {
       Toast("error", "Passwords do not match", "Please ensure that the passwords match.");
+      setIsLoading(false)
       return;
     }
+   
 
     console.log(fullName, email, password, password2);
+    
     const { data, error } = await register(fullName, email, password, password2);
+    
     if (data) {
       navigate('/login');
+      setIsLoading(false)
     } else {
+      setIsLoading(false)
       Toast("error", error, 'Try again later!');
     }
   };
@@ -92,7 +100,7 @@ function SignUp() {
                 className='rounded-lg hover:bg-black hover:text-orange-500 bg-orange-200 h-fit my-1 p-3 text-black font-bold'
                 type="button"
               >
-                Sign up
+                { isLoading ? <div className='flex justify-center items-center content-center'><img className="rounded-s-3xl w-5 h-5" src="loadinggif.gif" alt="Loading gif" /></div> :'Sign up'}
               </button>
             </form>
           </div>

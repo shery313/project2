@@ -3,12 +3,20 @@ import { login } from '../utils/auth';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { Helmet } from 'react-helmet';
+import { Toast } from '../plugins/Toast';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  const normalizeEmail=(email)=>{
+    const normalEmail=email.toLowerCase();
+    return setEmail(normalEmail)
+
+
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent default form submission
@@ -18,7 +26,7 @@ function Login() {
     setLoading(false); // Reset loading state
 
     if (error) {
-      alert(JSON.stringify(error));
+      Toast('error',JSON.stringify(error),'Please Check your credentials and try again!')
     } else {
       navigate("/");
     }
@@ -51,7 +59,7 @@ function Login() {
               <label htmlFor="email">Email</label>
               <input
                 placeholder="Enter your email id"
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => normalizeEmail(e.target.value)}
                 className="my-1 block h-9 border border-gray-200 rounded-lg p-3 hover:outline outline-blue-500 outline-1"
                 type="email"
                 id="email"
@@ -68,10 +76,10 @@ function Login() {
               />
               <button
                 type="submit"
-                className="rounded-lg hover:bg-black hover:text-orange-500 bg-orange-200 h-fit my-1 p-3 text-black font-bold"
+                className="rounded-lg hover:bg-black hover:text-orange-500 bg-orange-200 h-fit my-1 p-3 text-black font-bold text-center"
                 disabled={loading}
               >
-                {loading ? 'Logging in...' : 'Login'}
+                {loading ? <div className='flex justify-center items-center content-center'><img className="rounded-s-3xl w-5 h-5" src="loadinggif.gif" alt="Loading gif" /></div>  : 'Log in'}
               </button>
               <div className="flex items-center">
                 <div className="flex-grow border-t border-gray-300"></div>
@@ -87,7 +95,7 @@ function Login() {
             </form>
           </div>
           <aside className="img ml-40 md:block hidden">
-            <img className="rounded-s-3xl h-[700px] w-[700px]" src="/login-now.png" alt="Login illustration" />
+            <img className="rounded-s-3xl h-[700px] w-[700px]" src="/login-now.png" alt="Loading illustration" />
           </aside>
         </section>
       </main>

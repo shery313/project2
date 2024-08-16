@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import apiInstance from "../utils/axios";
 const CategoryPage = () => {
   const [category, setCategory] = useState([]);
   const [error, setError] = useState(null);
@@ -10,8 +11,8 @@ const CategoryPage = () => {
     async function fetchCategory() {
       try {
         const url = "https://sera-backend.up.railway.app/api/v1/post/category/list/";
-        const response = await fetch(url);
-        const data = await response.json();
+        const response = await apiInstance.get('/post/category/list/')
+        const data = await response.data;
         setCategory(data);
       } catch (error) {
         setError(error);
