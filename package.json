@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@tailwindcss/forms": "^0.5.7",
     "axios": "^1.7.2",
     "dom": "^0.0.3",
     "icons": "^1.0.0",
